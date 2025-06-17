@@ -1,9 +1,8 @@
-import image from '/src/assets/logo-white.png'
+import './Home.css'
 
 function Home() {
     return (
         <>
-            <img src={image} alt="logo"/>
             <h1>HOME PAGINA</h1>
         </>
     )

@@ -1,0 +1,18 @@
+.blogpost {
+    border: solid 1px grey;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.even {
+    background-color: blue;
+}
+
+.uneven {
+    background-color: #38E991;
+}
+
+.blogpostinfo {
+    color: grey;
+}
