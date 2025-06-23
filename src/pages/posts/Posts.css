@@ -1,0 +1,9 @@
+.postinfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.blogpostinfo {
+    color: grey;
+    opacity: 50%;
+}

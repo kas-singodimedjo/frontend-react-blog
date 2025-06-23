@@ -14,3 +14,7 @@
 .page-container img {
     width: 500px;
 }
+
+body {
+    background-color: RGB(229, 233, 240);
+}

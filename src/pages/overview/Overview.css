@@ -1,18 +1,9 @@
 .blogpost {
     border: solid 1px grey;
-    border-radius: 20px;
+    border-radius: 10px;
     margin: 20px;
     padding: 20px;
+    background: linear-gradient(37deg, rgba(44,47,57,0.8) 0%, rgba(0,0,0,0.8) 8%, rgba(80,83,92,0.8) 90%);
+    color: white;
 }
 
-.even {
-    background-color: blue;
-}
-
-.uneven {
-    background-color: #38E991;
-}
-
-.blogpostinfo {
-    color: grey;
-}

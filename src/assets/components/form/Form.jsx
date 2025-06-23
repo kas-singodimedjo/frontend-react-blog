@@ -1,6 +1,7 @@
 import {useState} from "react"
 import './Form.css'
 import axios from "axios";
+import datum from "../../helper/datum.js";
 
 function Form() {
     const [formData, setFormData] = useState({
@@ -36,8 +37,8 @@ function Form() {
                     "subtitle": formData.subtitle,
                     "content": formData.content,
                     "author": formData.author,
-                    "created": "2023-09-21T09:30:00Z",
-                    "readTime": 1,
+                    "created": datum,
+                    "readTime": formData.content.split(" ").length/100,
                     "comments": 0,
                     "shares": 0 }
             ,{

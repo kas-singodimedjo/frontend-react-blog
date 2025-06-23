@@ -36,7 +36,7 @@ function App() {
             <Nav />
         <Routes>
             <Route path="/" element={<Home />}/>
-            <Route path="/posts/:id" element={<Posts posts={posts} />}/>
+            <Route path="/posts/:id" element={<Posts posts={posts} fetchPosts={fetchPosts} />}/>
             <Route path="/overview" element={<Overview posts={posts} fetchPosts={fetchPosts} />}/>
             <Route path="/newpost" element={<NewPost />}/>
             <Route path="error" element={<Error />}/>

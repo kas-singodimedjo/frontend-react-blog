@@ -1,10 +1,12 @@
 import './Home.css'
-import Posts from "../posts/Posts.jsx";
-
 function Home() {
     return (
         <>
-            <h1>HOME PAGINA</h1>
+            <div className="container">
+            <div className="Home">
+                <h1>Welcome to the BLOgiverse</h1>
+            </div>
+            </div>
         </>
     )
 }

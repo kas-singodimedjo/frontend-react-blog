@@ -7,10 +7,8 @@ function Overview( {posts, fetchPosts } ) {
         fetchPosts();
     }, [fetchPosts]);
     const blogposts = posts;
-    const even = "even";
-    const uneven = "uneven"
         if (posts.length > 0) { return(
-            blogposts.map((post) => <div key={post.id} className={`blogpost ${post.id % 2 === 0 ? even : uneven}`}>
+            blogposts.map((post) => <div key={post.id} className={`blogpost`}>
                 <h2><Link to={`/posts/${post.id}`}>{post.title} - ({post.author})</Link></h2>
                 <p>{post.comments} reacties - {post.shares} keer gedeeld</p>
             </div>));
