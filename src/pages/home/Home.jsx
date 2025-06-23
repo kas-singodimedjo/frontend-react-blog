@@ -1,4 +1,5 @@
 import './Home.css'
+import Posts from "../posts/Posts.jsx";
 
 function Home() {
     return (

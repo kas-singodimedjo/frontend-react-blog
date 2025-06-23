@@ -1,11 +1,11 @@
 import {Link, useParams} from "react-router-dom";
-import posts from '/src/constants/data.json';
 import Datum from "../../assets/helper/datum.js";
 
-function Posts() {
+function Posts( { posts }) {
+
     const { id } = useParams();
     const post = posts.find(post => String(post.id) === String(id));
-    return (
+    if (post) {return (
         <>
             <div className="blogpost">
                 <h2>{post.title} ({post.readTime} minutes)</h2>
@@ -17,6 +17,7 @@ function Posts() {
             </div>
         </>
     )
-}
-
+    } else { return (
+    <h1>Er is iets mis gegaan...</h1>
+)}}
 export default Posts;

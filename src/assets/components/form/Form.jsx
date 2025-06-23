@@ -1,12 +1,18 @@
 import {useState} from "react"
 import './Form.css'
+import axios from "axios";
 
 function Form() {
     const [formData, setFormData] = useState({
-        titel: "",
-        subtitel: "",
-        auteur: "",
-        bericht: "",
+        title: "",
+        subtitle: "",
+        author: "",
+        content: "",
+        created: "",
+        readTime: "",
+        comments: 0,
+        shares: 0,
+
     });
 
     const handleChange = (e) => {
@@ -15,13 +21,37 @@ function Form() {
             ...data,
             [name]: value,
         }));
+        console.log(formData)
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        newPost(formData);
         console.log(formData);
     };
-
+    async function newPost(formData) {
+        try {
+            const results = await axios.post('https://novi-backend-api-wgsgz.ondigitalocean.app/api/blogposts', {
+                    "title": formData.title,
+                    "subtitle": formData.subtitle,
+                    "content": formData.content,
+                    "author": formData.author,
+                    "created": "2023-09-21T09:30:00Z",
+                    "readTime": 1,
+                    "comments": 0,
+                    "shares": 0 }
+            ,{
+                headers:
+                    {
+                        'novi-education-project-id': 'c3febb8a-1e6f-4661-b991-14584ed3e91b'
+                    }
+            });
+            console.log(results);
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
     return (
         <>
         <form onSubmit={handleSubmit}>
@@ -30,8 +60,8 @@ function Form() {
                     Titel:
                     <input
                         type="text"
-                        name="titel"
-                        value={formData.titel}
+                        name="title"
+                        value={formData.title}
                         onChange={handleChange}
                         required
                     />
@@ -42,8 +72,8 @@ function Form() {
                     Subtitel:
                     <input
                         type="text"
-                        name="subtitel"
-                        value={formData.subtitel}
+                        name="subtitle"
+                        value={formData.subtitle}
                         onChange={handleChange}
                         required
                     />
@@ -54,8 +84,8 @@ function Form() {
                     Auteur:
                     <input
                         type="text"
-                        name="auteur"
-                        value={formData.auteur}
+                        name="author"
+                        value={formData.author}
                         onChange={handleChange}
                         required
                     />
@@ -68,8 +98,8 @@ function Form() {
                     <textarea
                         rows="10"
                         cols="30"
-                        name="bericht"
-                        value={formData.bericht}
+                        name="content"
+                        value={formData.content}
                         minLength="300"
                         maxLength="2000"
                         onChange={handleChange}
