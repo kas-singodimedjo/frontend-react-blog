@@ -1,0 +1,27 @@
+nav {
+    background-color: #2C2F39;
+    height: 100px;
+    width: 100%;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: larger;
+    list-style: none;
+    padding: 20px;
+}
+
+img {
+    height: 50px;
+    justify-self: center;
+}
+
+a, a.visited {
+    color: #FFFFFF;
+    border-bottom: transparent;
+    text-decoration: none;
+}
